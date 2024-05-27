@@ -58,6 +58,6 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return logradouro + ", " + bairro + ", " + localidade + ", " + uf;
+        return logradouro + ", " + (complemento.isEmpty() ? "" : complemento + ", ") + bairro + ". " + localidade + "/" + uf;
     }
 }
