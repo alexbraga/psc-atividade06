@@ -15,7 +15,7 @@ public class ConsultaCEP {
 
         HttpRequest requisicao = null;
         HttpResponse<String> resposta = null;
-        String urlString = String.format(URL_VIACEP, cep);
+        String urlString = String.format(URL_VIACEP, cepSanitizado);
 
         try {
             requisicao = HttpRequest.newBuilder()
