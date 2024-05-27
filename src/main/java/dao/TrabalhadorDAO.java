@@ -38,9 +38,9 @@ public class TrabalhadorDAO {
     }
 
     public void salvarTodos(List<Trabalhador> trabalhadores) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
             for (Trabalhador trabalhador : trabalhadores) {
-                writer.write(String.format("%s,%f,%f,%d,%f,%s,%s,%s\n",
+                writer.write(String.format("nome: %s, salário bruto: R$%.2f, desconto INSS: R$%.2f, número de dependentes: %d, total de descontos IRRF: R$%.2f, CPF: %s, CEP: %s, endereço: %s",
                         trabalhador.getNome(),
                         trabalhador.getSalarioBruto(),
                         trabalhador.getDescontoINSS(),
@@ -50,6 +50,8 @@ public class TrabalhadorDAO {
                         trabalhador.getCep(),
                         trabalhador.getEndereco()
                 ));
+
+                writer.write(System.lineSeparator());
             }
         } catch (IOException e) {
             System.err.println("Erro ao salvar dados: " + e.getMessage());
