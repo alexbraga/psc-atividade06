@@ -30,7 +30,7 @@ public class TrabalhadorController {
         double irrf = calculadoraIRRF.calcularIRRF(trabalhador);
         double salarioLiquido = trabalhador.getSalarioBruto() - irrf;
 
-        System.out.println("Salário líquido: " + salarioLiquido);
+        System.out.println("Salário líquido: R$" + salarioLiquido);
 
         TRABALHADOR_REPOSITORY.adicionarOuAtualizar(trabalhador);
     }
