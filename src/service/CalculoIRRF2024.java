@@ -2,7 +2,7 @@ package service;
 
 import model.Trabalhador;
 
-public class CalculoIRRF2024 implements CalculadoraIRRFStrategy {
+public class CalculoIRRF2024 implements CalculoIRRFStrategy {
     public double calcular(Trabalhador trabalhador) {
         double salarioBruto = trabalhador.getSalarioBruto();
         double descontoINSS = trabalhador.getDescontoINSS();
