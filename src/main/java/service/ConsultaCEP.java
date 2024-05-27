@@ -36,6 +36,8 @@ public class ConsultaCEP {
         }
 
         Gson gson = new Gson();
+
+        // Mapear os dados da resposta para a uma instância da classe Endereco
         return gson.fromJson(resposta.body(), Endereco.class);
     }
 }
