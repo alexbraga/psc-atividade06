@@ -1,5 +1,8 @@
 package service;
 
+import com.google.gson.Gson;
+import model.Endereco;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -10,7 +13,7 @@ import java.net.http.HttpResponse;
 public class ConsultaCEP {
     private static final String URL_VIACEP = "https://viacep.com.br/ws/%s/json/";
 
-    public static String consultar(String cep) throws URISyntaxException {
+    public static Endereco buscar(String cep) throws URISyntaxException {
         String cepSanitizado = cep.replaceAll("[^0-9]", "");
 
         HttpRequest requisicao = null;
@@ -24,10 +27,15 @@ public class ConsultaCEP {
                                     .build();
 
             resposta = HttpClient.newHttpClient().send(requisicao, HttpResponse.BodyHandlers.ofString());
+
+            if (resposta.statusCode() != 200) {
+                throw new RuntimeException("HTTP error code : " + resposta.statusCode());
+            }
         } catch (URISyntaxException | IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        return resposta.body();
+        Gson gson = new Gson();
+        return gson.fromJson(resposta.body(), Endereco.class);
     }
 }
