@@ -11,22 +11,25 @@ public class TrabalhadorDAO {
 
     public List<Trabalhador> carregarTodos() {
         List<Trabalhador> trabalhadores = new ArrayList<>();
+
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String linha;
+
             while ((linha = reader.readLine()) != null) {
-                String[] dados = linha.split(",");
+                String[] dados = linha.split(", ");
+
                 if (dados.length == 8) {
                     Trabalhador trabalhador = new Trabalhador(
-                            dados[0],
-                            Double.parseDouble(dados[1]),
-                            Double.parseDouble(dados[2]),
-                            Integer.parseInt(dados[3]),
-                            Double.parseDouble(dados[4]),
-                            dados[5],
-                            dados[6]
+                            dados[0].split(": ")[1],
+                            Double.parseDouble(dados[1].split(": ")[1].replace("R$", "")),
+                            Double.parseDouble(dados[2].split(": ")[1].replace("R$", "")),
+                            Integer.parseInt(dados[3].split(": ")[1]),
+                            Double.parseDouble(dados[4].split(": ")[1].replace("R$", "")),
+                            dados[5].split(": ")[1],
+                            dados[6].split(": ")[1]
                     );
 
-                    trabalhador.setEndereco(dados[7]);
+                    trabalhador.setEndereco(dados[7].split(": ")[1]);
                     trabalhadores.add(trabalhador);
                 }
             }
@@ -38,9 +41,9 @@ public class TrabalhadorDAO {
     }
 
     public void salvarTodos(List<Trabalhador> trabalhadores) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, false))) {
             for (Trabalhador trabalhador : trabalhadores) {
-                writer.write(String.format("nome: %s, salário bruto: R$%.2f, desconto INSS: R$%.2f, número de dependentes: %d, total de descontos IRRF: R$%.2f, CPF: %s, CEP: %s, endereço: %s",
+                writer.write(String.format("NOME: %s, SALÁRIO BRUTO: R$%.2f, DESCONTO INSS: R$%.2f, NÚMERO DE DEPENDENTES: %d, TOTAL DE DESCONTOS IRRF: R$%.2f, CPF: %s, CEP: %s, ENDEREÇO: %s",
                         trabalhador.getNome(),
                         trabalhador.getSalarioBruto(),
                         trabalhador.getDescontoINSS(),
