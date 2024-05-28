@@ -48,8 +48,4 @@ public class TrabalhadorRepository {
 
         return null;
     }
-
-    public List<Trabalhador> buscarTodos() {
-        return new ArrayList<>(trabalhadores);
-    }
 }
