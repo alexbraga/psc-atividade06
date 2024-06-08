@@ -44,7 +44,9 @@
 ---
 
 ## Unidade Curricular
-- ### Programação de Soluções Computacionais
+
+### Programação de Soluções Computacionais
+  - #### Centro Universitário de Belo Horizonte (UniBH)
 
 #### Professores
   - Alexandre "Montanha" de Oliveira
