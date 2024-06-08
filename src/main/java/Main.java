@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) throws URISyntaxException {
         Scanner scanner = new Scanner(System.in);
 
-        // Receber dados do trabalhador
+        System.out.println("Insira os dados do trabalhador a seguir:\n");
+
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
 
