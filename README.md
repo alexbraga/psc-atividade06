@@ -14,6 +14,16 @@
 	 Status: Em Andamento
 </h4>
 
+<p align="center">
+ <a href="#sobre">Sobre</a> •
+ <a href="#requisitos-do-programa">Requisitos do Programa</a> •
+ <a href="#processo">Processo</a> •
+ <a href="#características-técnicas">Características Técnicas</a> •
+ <a href="#como-funciona">Como Funciona</a> •
+ <a href="#unidade-curricular">Unidade Curricular</a> •
+ <a href="#autor">Autor</a>
+</p>
+
 ## Sobre
 
 <p align="justify">A atividade consiste em criar um programa em C# ou Java com o auxílio de uma ou mais IAs generativas. O objetivo é reforçar os conceitos discutidos no curso e praticar suas habilidades de programação e uso de IA.</p>
@@ -40,6 +50,63 @@
 4. **Correção de código**: Peça à IA para corrigir a forma como você fez.
 5. **Habilitação da IA na IDE**: Habilite uma IA Generativa na IDE (caso tenha acesso) e a instrua sobre a estrutura geral.
 6. **Casos de teste**: Solicite à IA casos de teste para o seu programa.
+
+---
+
+## Características Técnicas
+
+A presente aplicação implementa os seguintes padrões de projeto e arquitetura:
+
+- MVC (Model-View-Controller)
+- Singleton
+- DAO (Data Access Object)
+- Strategy
+- Factory
+
+---
+
+## Como Funciona
+
+1. <a href="#clonando-o-repositório">Clonando o repositório</a>
+2. <a href="#executando-a-aplicação">Executando a aplicação</a>
+
+#### Pré-requisitos
+
+Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
+
+- [Git](https://git-scm.com)
+- [Java JDK 17](https://www.oracle.com/java/technologies/downloads/)
+- [Maven](https://maven.apache.org/)
+
+Além disso, você talvez deseje utilizar uma IDE para trabalhar com o código, tal como o
+[IntelliJ IDEA](https://www.jetbrains.com/idea/).
+
+#### Clonando o repositório
+
+Abra uma janela do terminal e execute o seguinte comando
+```
+git clone https://github.com/alexbraga/psc-atividade06.git
+```
+
+#### Executando a aplicação
+
+Navegue até a raiz do projeto
+```
+cd psc-atividade06
+```
+
+Compile o código
+```
+mvn compile
+```
+
+Execute a aplicação
+```
+java -cp target/classes Main
+```
+- ATENÇÃO: para executar a aplicação no Windows use `java -cp target\classes Main`
+
+- Alternativamente, abra `psc-atividade06` com sua IDE de preferência e execute `Main.java`
 
 ---
 
