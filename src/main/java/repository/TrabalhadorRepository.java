@@ -3,17 +3,16 @@ package repository;
 import dao.TrabalhadorDAO;
 import model.Trabalhador;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TrabalhadorRepository {
     private static TrabalhadorRepository instance;
-    private TrabalhadorDAO trabalhadorDAO;
+    private final TrabalhadorDAO TRABALHADOR_DAO;
     private List<Trabalhador> trabalhadores;
 
     private TrabalhadorRepository() {
-        trabalhadorDAO = new TrabalhadorDAO();
-        trabalhadorDAO.inicializarArquivo();
+        TRABALHADOR_DAO = new TrabalhadorDAO();
+        TRABALHADOR_DAO.inicializarArquivo();
         carregarDados();
     }
 
@@ -26,7 +25,7 @@ public class TrabalhadorRepository {
     }
 
     public void carregarDados() {
-        trabalhadores = trabalhadorDAO.carregarTodos();
+        trabalhadores = TRABALHADOR_DAO.carregarTodos();
     }
 
     public void adicionarOuAtualizar(Trabalhador trabalhador) {
@@ -36,7 +35,7 @@ public class TrabalhadorRepository {
         }
 
         trabalhadores.add(trabalhador);
-        trabalhadorDAO.salvarTodos(trabalhadores);
+        TRABALHADOR_DAO.salvarTodos(trabalhadores);
     }
 
     public Trabalhador buscarPorCPF(String cpf) {
