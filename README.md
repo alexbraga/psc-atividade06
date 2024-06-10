@@ -8,6 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/alexbraga/psc-atividade06/commits/master"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alexbraga/psc-atividade06"></a>
+  <a href="https://github.com/alexbraga/psc-atividade06/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/alexbraga/psc-atividade06"></a>
 </p>
 
 <h4 align="center">
@@ -21,7 +22,8 @@
  <a href="#características-técnicas">Características Técnicas</a> •
  <a href="#como-funciona">Como Funciona</a> •
  <a href="#unidade-curricular">Unidade Curricular</a> •
- <a href="#autor">Autor</a>
+ <a href="#autor">Autor</a> •
+ <a href="#licença">Licença</a>
 </p>
 
 ## Sobre
@@ -67,44 +69,51 @@ A presente aplicação implementa os seguintes padrões de projeto e arquitetura
 
 ## Como Funciona
 
-1. <a href="#clonando-o-repositório">Clonando o repositório</a>
-2. <a href="#executando-a-aplicação">Executando a aplicação</a>
+1. <a href="#1-pré-requisitos">Pré-requisitos</a>
+2. <a href="#2-clonando-o-repositório">Clonando o repositório</a>
+3. <a href="#3-executando-a-aplicação">Executando a aplicação</a>
 
-#### Pré-requisitos
+### 1. Pré-requisitos
 
-Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
+Antes de começar, você precisará ter as seguintes ferramentas instaladas em seu sistema:
 
 - [Git](https://git-scm.com)
-- [Java JDK 17](https://www.oracle.com/java/technologies/downloads/)
+- [Java JDK 17 ou superior](https://www.oracle.com/java/technologies/downloads/)
 - [Maven](https://maven.apache.org/)
 
 Além disso, você talvez deseje utilizar uma IDE para trabalhar com o código, tal como o
 [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
-#### Clonando o repositório
+### 2. Clonando o repositório
 
 Abra uma janela do terminal e execute o seguinte comando
+
 ```
 git clone https://github.com/alexbraga/psc-atividade06.git
 ```
 
-#### Executando a aplicação
+### 3. Executando a aplicação
 
 Navegue até a raiz do projeto
+
 ```
 cd psc-atividade06
 ```
 
 Compile o código
+
 ```
 mvn compile
 ```
 
 Execute a aplicação
+
 ```
 java -cp target/classes Main
 ```
-- ATENÇÃO: para executar a aplicação no Windows use `java -cp target\classes Main`
+
+> [!WARNING]
+> Para executar a aplicação no Windows, use `java -cp target\classes Main`
 
 - Alternativamente, abra `psc-atividade06` com sua IDE de preferência e execute `Main.java`
 
@@ -113,11 +122,13 @@ java -cp target/classes Main
 ## Unidade Curricular
 
 ### Programação de Soluções Computacionais
-  - #### Centro Universitário de Belo Horizonte (UniBH)
+
+- #### Centro Universitário de Belo Horizonte (UniBH)
 
 #### Professores
-  - Alexandre "Montanha" de Oliveira
-  - Flávio Henrique Batista de Souza
+
+- Alexandre "Montanha" de Oliveira
+- Flávio Henrique Batista de Souza
 
 ---
 
@@ -129,3 +140,9 @@ java -cp target/classes Main
 <a href="https://www.linkedin.com/in/alexgbraga/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;
 <a href="mailto:contato@alexbraga.com.br" target="_blank"><img src="https://img.shields.io/badge/-email-c14438?style=for-the-badge&logo=Gmail&logoColor=white" alt="E-Mail"></a>
 </div>
+
+---
+
+## Licença
+
+Este projeto encontra-se sob a licença [MIT](./LICENSE)
