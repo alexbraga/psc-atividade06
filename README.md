@@ -12,7 +12,7 @@
 </p>
 
 <h4 align="center">
-	 Status: Em Andamento
+	 Status: Concluído
 </h4>
 
 <p align="center">
@@ -109,11 +109,8 @@ mvn compile
 Execute a aplicação
 
 ```
-java -cp target/classes Main
+mvn exec:java
 ```
-
-> [!WARNING]
-> Para executar a aplicação no Windows, use `java -cp target\classes Main`
 
 - Alternativamente, abra `psc-atividade06` com sua IDE de preferência e execute `Main.java`
 
